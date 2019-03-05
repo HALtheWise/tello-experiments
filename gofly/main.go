@@ -11,23 +11,23 @@ int myprint(char* s) {
 }
 */
 
-import "C"
+// import "C"
 
 import (
 	"fmt"
-	"unsafe"
 
 	"github.com/SMerrony/tello"
 )
 
 var _ tello.Tello
+var _ StringVector
 
 func example() int {
-	cs := C.CString("Hello from stdio\n")
-	n := C.myprint(cs)
-	C.free(unsafe.Pointer(cs))
+	// cs := C.CString("Hello from stdio\n")
+	// n := C.myprint(cs)
+	// C.free(unsafe.Pointer(cs))
 
-	return int(n)
+	return int(1)
 }
 
 func main() {
