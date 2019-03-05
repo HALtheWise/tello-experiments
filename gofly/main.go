@@ -27,7 +27,7 @@ func example() int {
 	// n := C.myprint(cs)
 	// C.free(unsafe.Pointer(cs))
 
-	return int(1)
+	return int(100)
 }
 
 func main() {
