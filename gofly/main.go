@@ -3,6 +3,7 @@ package main
 /*
 #include <stdio.h>
 #include <stdlib.h>
+//#include "ceres/ceres.h"
 
 int myprint(char* s) {
 	printf("%s\n", s);
@@ -11,10 +12,12 @@ int myprint(char* s) {
 */
 import "C"
 
-import "fmt"
-import "unsafe"
+import (
+	"fmt"
+	"unsafe"
 
-import "github.com/SMerrony/tello"
+	"github.com/SMerrony/tello"
+)
 
 var _ tello.Tello
 
