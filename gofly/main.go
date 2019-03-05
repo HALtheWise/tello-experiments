@@ -10,6 +10,7 @@ int myprint(char* s) {
 	return 1;
 }
 */
+
 import "C"
 
 import (
