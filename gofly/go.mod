@@ -1,4 +1,4 @@
-module github.com/HALthwWise/tello-experiments/gofly
+module github.com/HALtheWise/tello-experiments/gofly
 
 go 1.12
 

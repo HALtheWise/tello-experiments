@@ -1,6 +1,6 @@
-%module main
+%module ceres
 %{
-//#include "estimator/estimator.h"
+#include "ceres/ceres.h"
 %}
 
 %include <typemaps.i>

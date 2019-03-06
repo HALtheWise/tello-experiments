@@ -1,26 +1,14 @@
 package main
 
-/*
-#include <stdio.h>
-#include <stdlib.h>
-//#include "ceres/ceres.h"
-
-int myprint(char* s) {
-	printf("%s\n", s);
-	return 1;
-}
-*/
-
-// import "C"
-
 import (
 	"fmt"
 
+	"github.com/HALtheWise/tello-experiments/gofly/ceres"
 	"github.com/SMerrony/tello"
 )
 
 var _ tello.Tello
-var _ StringVector
+var _ ceres.StringVector
 
 func example() int {
 	// cs := C.CString("Hello from stdio\n")
