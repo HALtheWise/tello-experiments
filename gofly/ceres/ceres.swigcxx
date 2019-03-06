@@ -1,6 +1,6 @@
 %module ceres
 %{
-#include "ceres/ceres.h"
+//#include "ceres/ceres.h"
 %}
 
 %include <typemaps.i>
