@@ -3,7 +3,7 @@ package main
 /*
 #include <stdio.h>
 #include <stdlib.h>
-//#include "ceres/ceres.h"
+#include "ceres/ceres.h"
 
 int myprint(char* s) {
 	printf("%s\n", s);
