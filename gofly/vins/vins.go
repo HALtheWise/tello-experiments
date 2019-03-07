@@ -15,12 +15,12 @@ package vins
 import "C"
 
 type Estimator struct {
-	c C.Estimator
+	c *C.Estimator
 }
 
-// func NewEstimator() Estimator {
-
-// }
+func NewEstimator() Estimator {
+	return Estimator{C.NewEstimator()}
+}
 
 func GetBool() bool {
 	return bool(C.EstimatorInitialStructure())

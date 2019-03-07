@@ -1,10 +1,8 @@
 #include "vins.h"
 
-// Estimator estimator;
-
-// Estimator NewEstimator() {
-//     return estimator;
-// }
+Estimator* NewEstimator() {
+    return new Estimator;
+}
 
 bool EstimatorInitialStructure(){
     readParameters(std::string());

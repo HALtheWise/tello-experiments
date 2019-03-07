@@ -12,7 +12,7 @@ extern "C" {
 typedef void* Estimator;
 #endif
 
-// Estimator NewEstimator();
+Estimator* NewEstimator();
 bool EstimatorInitialStructure();
 
 #ifdef __cplusplus
