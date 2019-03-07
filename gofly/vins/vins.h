@@ -13,7 +13,7 @@ typedef void* Estimator;
 #endif
 
 Estimator* NewEstimator();
-bool EstimatorInitialStructure();
+bool EstimatorInitialStructure(Estimator* e);
 
 #ifdef __cplusplus
 }

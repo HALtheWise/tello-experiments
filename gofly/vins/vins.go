@@ -22,8 +22,8 @@ func NewEstimator() Estimator {
 	return Estimator{C.NewEstimator()}
 }
 
-func GetBool() bool {
-	return bool(C.EstimatorInitialStructure())
+func (e* Estimator) InitialStructure() bool {
+	return bool(C.EstimatorInitialStructure(e.c))
 }
 
 // class Estimator

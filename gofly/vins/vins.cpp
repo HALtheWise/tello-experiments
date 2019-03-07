@@ -4,7 +4,6 @@ Estimator* NewEstimator() {
     return new Estimator;
 }
 
-bool EstimatorInitialStructure(){
-    readParameters(std::string());
-    return Estimator::INITIAL;
+bool EstimatorInitialStructure(Estimator* e){
+    return e->initialStructure();
 }

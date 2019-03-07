@@ -8,7 +8,7 @@ import (
 )
 
 func TestStuff(t *testing.T) {
-	// t.Logf("Got bool: %v", vins.GetBool())
 	e := vins.NewEstimator()
-	fmt.Printf("%v", e)
+	fmt.Printf("Estimator: %v\n", e)
+	// fmt.Printf("Initial structure: %v\n", e.InitialStructure())
 }
