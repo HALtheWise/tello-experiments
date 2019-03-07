@@ -2,7 +2,7 @@
 #define _OPENCV3_VERSION_H_
 
 #ifdef __cplusplus
-#include </opt/ros/melodic/include/std_msgs/Bool.h>
+#include <std_msgs/Bool.h>
 extern "C" {
 #endif
 
