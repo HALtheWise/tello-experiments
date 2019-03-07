@@ -2,13 +2,9 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/HALtheWise/tello-experiments/gofly/ceres"
-	"github.com/SMerrony/tello"
 )
 
-var _ tello.Tello
-var _ ceres.StringVector
+// var _ tello.Tello
 
 func example() int {
 	// cs := C.CString("Hello from stdio\n")

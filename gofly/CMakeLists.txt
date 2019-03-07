@@ -11,6 +11,7 @@ add_compile_options(-std=c++11)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
 #  vins
+    std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -133,7 +134,18 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/gofly_node.cpp)
+# add_executable(gofly_ros_test ros/ros.go)
+
+
+set(SOURCE_FILES
+ros/ros.go
+ros/version.h
+ros/version.cpp)
+
+add_executable(goflyros ros/ros.go)
+
+add_executable(gofly main.go)
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
