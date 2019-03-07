@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 #ifdef __cplusplus
 #include <../../third_party/vins-fusion/vins_estimator/src/estimator/estimator.h>
 
@@ -10,6 +12,8 @@ extern "C" {
 typedef void* Estimator;
 #endif
 
+// Estimator NewEstimator();
+bool EstimatorInitialStructure();
 
 #ifdef __cplusplus
 }

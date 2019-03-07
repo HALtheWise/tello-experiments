@@ -1,6 +1,9 @@
 package vins_test
 
 import "testing"
-import _ "github.com/HALtheWise/tello-experiments/gofly/vins"
+import "github.com/HALtheWise/tello-experiments/gofly/vins"
 
-func TestCompile(t *testing.T) {}
+func TestStuff(t *testing.T) {
+	t.Logf("Got bool: %v", vins.GetBool())
+	var _ vins.Estimator
+}
