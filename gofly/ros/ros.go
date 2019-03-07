@@ -3,6 +3,7 @@ package main
 /*
 #include <stdlib.h>
 #include "version.h"
+#cgo LDFLAGS: -L/opt/ros/melodic/lib
 */
 import "C"
 
