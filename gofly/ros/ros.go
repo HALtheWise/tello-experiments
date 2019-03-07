@@ -1,5 +1,7 @@
 package main
 
+// From catkin build --get-env gofly
+
 //#cgo LDFLAGS: -L/opt/ros/melodic/lib
 
 /*

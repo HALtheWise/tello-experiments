@@ -10,7 +10,7 @@ add_compile_options(-std=c++11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-#  vins
+    vins
     std_msgs
 )
 
@@ -137,14 +137,14 @@ include_directories(
 # add_executable(gofly_ros_test ros/ros.go)
 
 
-set(SOURCE_FILES
-ros/ros.go
-ros/version.h
-ros/version.cpp)
+# set(SOURCE_FILES
+# ros/ros.go
+# ros/version.h
+# ros/version.cpp)
 
-add_executable(goflyros ros/ros.go)
+# add_executable(goflyros ros/ros.go)
 
-add_executable(gofly main.go)
+# add_executable(gofly main.go)
 
 
 ## Rename C++ executable without prefix
