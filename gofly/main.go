@@ -20,6 +20,10 @@ func main() {
 
 	drone.TakeOff()
 	time.Sleep(2.0 * time.Second)
+	err = drone.SetHome()
+	if err != nil {
+		log.Printf("Unable to set home: %v", err)
+	}
 
 	drone.GetSSID()
 	drone.GetVersion()
