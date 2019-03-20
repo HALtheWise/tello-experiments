@@ -1,9 +1,7 @@
 package gonet
 
 import (
-	"log"
 	"sync"
-	"time"
 )
 
 type Topic string
@@ -12,8 +10,9 @@ type Net struct {
 	nodesinitialized sync.WaitGroup
 	nodesrunning     sync.WaitGroup
 
-	subscribers map[Topic][]chan interface{}
-	nodes       []Context
+	subscribers          map[Topic][]chan interface{}
+	universalsubscribers []chan MessageInfo
+	nodes                []*Context
 }
 
 type Context struct {
@@ -38,12 +37,12 @@ type Context struct {
 // Every node must call this when it has finished initializing.
 func (c *Context) WaitForStart() {
 	close(c.initializing)
-	<-c.waiting
 	c.Initialized = true
+	<-c.waiting
 }
 
 func (n *Net) MakeNode(name string, node func(*Context)) {
-	n.nodes = append(n.nodes, Context{
+	n.nodes = append(n.nodes, &Context{
 		net:          n,
 		Name:         name,
 		mainfunc:     node,
@@ -61,9 +60,9 @@ func (n *Net) Run() {
 	for _, context := range n.nodes {
 		// Make a local variable pointing to the slice element
 		// Prevents the pointer from changing under us
-		context := &context
+		context := context
 
-		start := time.Now()
+		// start := time.Now()
 
 		go func() {
 			context.mainfunc(context)
@@ -71,10 +70,10 @@ func (n *Net) Run() {
 		}()
 		<-context.initializing
 
-		end := time.Now()
-		log.Printf("Node %#v initialized in %v",
-			context.Name,
-			end.Sub(start))
+		// end := time.Now()
+		// log.Printf("Node %#v initialized in %v",
+		// 	context.Name,
+		// 	end.Sub(start))
 	}
 
 	// Run nodes
@@ -100,6 +99,13 @@ func (c *Context) Publish(topic Topic, data interface{}) {
 
 	for _, c := range n.subscribers[topic] {
 		c <- data
+	}
+
+	for _, c := range n.universalsubscribers {
+		c <- MessageInfo{
+			Topic: topic,
+			Data:  data,
+		}
 	}
 }
 
